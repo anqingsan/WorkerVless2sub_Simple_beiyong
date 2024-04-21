@@ -38,14 +38,50 @@ let noTLS = false; //改为 true , 将不做域名判断 始终返回noTLS节点
 let link = '';
 let edgetunnel = 'ed';
 let RproxyIP = 'false';
+// let proxyIPs = [
+// 	'proxyip.aliyun.fxxk.dedyn.io',
+// 	'proxyip.multacom.fxxk.dedyn.io',
+// 	'proxyip.vultr.fxxk.dedyn.io',
+// ];
+// let CMproxyIPs = [
+// 	//{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" },
+// ];
+
+
+// sc修改
 let proxyIPs = [
 	'proxyip.aliyun.fxxk.dedyn.io',
 	'proxyip.multacom.fxxk.dedyn.io',
 	'proxyip.vultr.fxxk.dedyn.io',
+	'proxyip.oracle.fxxk.dedyn.io',
+	'proxyip.digitalocean.fxxk.dedyn.io',
 ];
 let CMproxyIPs = [
+	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "US" }
+	{ proxyIP: "proxyip.sg.fxxk.dedyn.io", type: "SG" }
+	{ proxyIP: "proxyip.jp.fxxk.dedyn.io", type: "JP" }
+	{ proxyIP: "proxyip.hk.fxxk.dedyn.io", type: "HK" }
+	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" }
+	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" }
+	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" }
+
+	//proxyip.fxxk.dedyn.io 
+	//IP落地区域: 美国 维护频率: 12小时/次
+	//proxyip.sg.fxxk.dedyn.io 
+	//IP落地区域: 新加坡 维护频率: 12小时/次
+	//proxyip.jp.fxxk.dedyn.io 
+	//IP落地区域: 日本 维护频率: 12小时/次
+	//proxyip.hk.fxxk.dedyn.io
+	//IP落地区域: 香港 维护频率: 12小时/次
+	//proxyip.aliyun.fxxk.dedyn.io 
+	//IP落地区域: 阿里云 维护频率: 4小时/次
+	//proxyip.oracle.fxxk.dedyn.io 
+	//IP落地区域: 甲骨文 维护频率: 4小时/次
+	//proxyip.digitalocean.fxxk.dedyn.io 
+	//IP落地区域: 数码海 维护频率: 4小时/次
 	//{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" },
 ];
+
 let BotToken ='';
 let ChatID =''; 
 let proxyhosts = [//本地代理域名池
