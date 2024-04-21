@@ -57,13 +57,10 @@ let proxyIPs = [
 	'proxyip.digitalocean.fxxk.dedyn.io',
 ];
 let CMproxyIPs = [
-	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "US" }
-	{ proxyIP: "proxyip.sg.fxxk.dedyn.io", type: "SG" }
-	{ proxyIP: "proxyip.jp.fxxk.dedyn.io", type: "JP" }
-	{ proxyIP: "proxyip.hk.fxxk.dedyn.io", type: "HK" }
-	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" }
-	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" }
-	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "HK" }
+	{ proxyIP: "proxyip.fxxk.dedyn.io", type: "US" },
+	{ proxyIP: "proxyip.sg.fxxk.dedyn.io", type: "SG" },
+	{ proxyIP: "proxyip.jp.fxxk.dedyn.io", type: "JP" },
+	{ proxyIP: "proxyip.hk.fxxk.dedyn.io", type: "HK" },
 
 	//proxyip.fxxk.dedyn.io 
 	//IP落地区域: 美国 维护频率: 12小时/次
