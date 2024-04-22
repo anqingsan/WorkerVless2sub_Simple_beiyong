@@ -1,3 +1,6 @@
+# 增加 location_by_anqingsan.py 
+- 将节点放入 ip.txt (节点后面必须加,其他的多加了都无所谓，至少有一个逗号) , github 工作流即可自动生成带国家名信息的节点 anqingsan 20240422
+- 代码中两种方式均可实现，第一种利用网站检测 ip，第二种用 Geolite2 检测 ip
 # 优选订阅生成器 WorkerVless2sub
 
 ### 这个是一个通过 Cloudflare Workers 搭建，自动生成优选线路 VLESS 节点订阅内容生成器 [[实现原理]](https://www.youtube.com/watch?v=p-KhFJAC4WQ&t=70s)
