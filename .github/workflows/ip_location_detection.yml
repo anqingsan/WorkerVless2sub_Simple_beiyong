@@ -25,4 +25,4 @@ jobs:
 
       - name: Run IP Location Detection
         run: |
-          python location_anqingsan.py
+          python location_by_anqingsan.py
