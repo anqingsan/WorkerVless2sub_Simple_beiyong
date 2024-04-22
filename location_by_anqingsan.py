@@ -37,7 +37,7 @@ def main():
     主程序入口
     """
     input_file_path = "ip.txt"  # 输入文件路径
-    output_file_path = "output.txt"  # 输出文件路径
+    output_file_path = "addressesapi.txt"  # 输出文件路径
     port = 443  # 端口号
 
     if not os.path.exists(input_file_path):
