@@ -107,6 +107,7 @@ def main():
     """
     input_file_path = "ip.txt"  # 输入文件路径
     output_file_path = "addressesapi.txt"  # 输出文件路径
+    port = 443  # 端口号
 
     if not os.path.exists(input_file_path):
         print("输入文件不存在")
@@ -118,7 +119,8 @@ def main():
         for ip_address in ip_addresses:
             location = get_ip_location(ip_address)
             if location is not None:
-                file.write(f"{location['ip']}:443#{location['country']}_{location['region']}\n")  # 修改分隔符为_
+                file.write(f"{location['ip']}:{port}#{location['country']}_{location['region']}\n")  # 国家+地区代号
+                # file.write(f"{location['ip']}:{port}#{location['country']}\n")  # 仅国家 
         print('location检测完成')
     print('location检测完成')
 
