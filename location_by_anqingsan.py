@@ -3,6 +3,7 @@
 # # """
 # import os
 # import requests
+# import re
 
 
 # def get_ip_location(ip_address):
@@ -18,19 +19,33 @@
 #     return location
 
 
+# # def extract_ips_from_file(file_path):
+# #     """
+# #     从 TXT 文件中提取 IP 地址
+# #     """
+# #     ip_addresses = []
+# #     with open(file_path, "r", encoding='utf-8') as file:  # 指定使用 'utf-8' 编码
+# #         next(file)  # 跳过标题行
+# #         for line in file:
+# #             ip_address = line.split(",")[0]  # IP 地址在每行的第一个位置
+# #             ip_addresses.append(ip_address)
+
+# #     return ip_addresses
+
+
 # def extract_ips_from_file(file_path):
 #     """
 #     从 TXT 文件中提取 IP 地址
 #     """
 #     ip_addresses = []
 #     with open(file_path, "r", encoding='utf-8') as file:  # 指定使用 'utf-8' 编码
-#         next(file)  # 跳过标题行
 #         for line in file:
-#             ip_address = line.split(",")[0]  # IP 地址在每行的第一个位置
-#             ip_addresses.append(ip_address)
+#             match = re.search(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b', line)  # 匹配IP地址
+#             if match:
+#                 ip_address = match.group()  # 获取匹配的IP地址
+#                 ip_addresses.append(ip_address)
 
 #     return ip_addresses
-
 
 # def main():
 #     """
@@ -67,6 +82,7 @@
 """
 import os
 import geoip2.database
+import re
 
 
 def get_ip_location(ip_address):
@@ -87,18 +103,33 @@ def get_ip_location(ip_address):
     return location
 
 
+# def extract_ips_from_file(file_path):
+#   """
+#     从 TXT 文件中提取 IP 地址
+#     """
+#   ip_addresses = []
+#   with open(file_path, "r") as file:
+#     next(file)  # 跳过标题行
+#     for line in file:
+#       ip_address = line.split(",")[0]  # IP 地址在每行的第一个位置
+#       ip_addresses.append(ip_address)
+
+#   return ip_addresses
+
+
 def extract_ips_from_file(file_path):
-  """
+    """
     从 TXT 文件中提取 IP 地址
     """
-  ip_addresses = []
-  with open(file_path, "r") as file:
-    next(file)  # 跳过标题行
-    for line in file:
-      ip_address = line.split(",")[0]  # IP 地址在每行的第一个位置
-      ip_addresses.append(ip_address)
+    ip_addresses = []
+    with open(file_path, "r", encoding='utf-8') as file:  # 指定使用 'utf-8' 编码
+        for line in file:
+            match = re.search(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b', line)  # 匹配IP地址
+            if match:
+                ip_address = match.group()  # 获取匹配的IP地址
+                ip_addresses.append(ip_address)
 
-  return ip_addresses
+    return ip_addresses
 
 
 def main():
