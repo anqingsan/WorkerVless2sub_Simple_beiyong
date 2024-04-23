@@ -79,6 +79,7 @@
 
 """
 使用 GeoLite2-City.mmdb 数据库查询 IP 地址的位置信息（可用20240422）
+由于改用 GeoLite2-City.mmdb 文件过大，cf无法部署，故改用 GeoLite2-Country.mmdb 文件
 """
 import os
 import geoip2.database
@@ -95,8 +96,8 @@ def get_ip_location(ip_address):
         location = {
             "ip": ip_address,
             "country": response.country.iso_code,
-            # "region": response.subdivisions.most_specific.iso_code,  # 添加地区代号
-            "region": response.subdivisions.most_specific.name,  # 添加地区名称
+            # "region": response.subdivisions.most_specific.iso_code,  # 添加地区代号 改用 GeoLite2-Country.mmdb 必须注释掉，该文件中只有国家不包含地区
+            # "region": response.subdivisions.most_specific.name,  # 添加地区名称 改用 GeoLite2-Country.mmdb 必须注释掉，该文件中只有国家不包含地区
         }
     except geoip2.errors.AddressNotFoundError:
         return None
@@ -151,8 +152,8 @@ def main():
         for ip_address in ip_addresses:
             location = get_ip_location(ip_address)
             if location is not None:
-                file.write(f"{location['ip']}:{port}#{location['country']} {location['region']}\n")  # 国家+地区代号
-                # file.write(f"{location['ip']}:{port}#{location['country']}\n")  # 仅国家 
+                # file.write(f"{location['ip']}:{port}#{location['country']} {location['region']}\n")  # 国家+地区代号
+                file.write(f"{location['ip']}:{port}#{location['country']}\n")  # 仅国家 
         print('location检测完成')
     print('location检测完成')
 
