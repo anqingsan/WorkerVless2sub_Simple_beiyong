@@ -150,7 +150,7 @@ def main():
         for ip_address in ip_addresses:
             location = get_ip_location(ip_address)
             if location is not None:
-                file.write(f"{location['ip']}:{port}#{location['country']}_{location['region']}\n")  # 国家+地区代号
+                file.write(f"{location['ip']}:{port}#{location['country']} {location['region']}\n")  # 国家+地区代号
                 # file.write(f"{location['ip']}:{port}#{location['country']}\n")  # 仅国家 
         print('location检测完成')
     print('location检测完成')
