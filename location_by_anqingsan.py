@@ -95,7 +95,8 @@ def get_ip_location(ip_address):
         location = {
             "ip": ip_address,
             "country": response.country.iso_code,
-            "region": response.subdivisions.most_specific.iso_code,  # 添加地区代号
+            # "region": response.subdivisions.most_specific.iso_code,  # 添加地区代号
+            "region": response.subdivisions.most_specific.name,  # 添加地区名称
         }
     except geoip2.errors.AddressNotFoundError:
         return None
