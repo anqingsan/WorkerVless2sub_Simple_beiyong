@@ -92,7 +92,9 @@ def get_ip_location(ip_address):
     """
     reader = geoip2.database.Reader('GeoLite2-Country.mmdb')
     try:
-        response = reader.city(ip_address)
+        # response = reader.city(ip_address) # 改用 GeoLite2-Country.mmdb 文件，不再返回地区信息
+        response = reader.country(ip_address)
+
         location = {
             "ip": ip_address,
             "country": response.country.iso_code,
