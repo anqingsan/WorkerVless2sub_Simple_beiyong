@@ -121,7 +121,7 @@ def get_ip_location(ip_address):
 #   return ip_addresses
 
 
-def extract_ips_from_file(file_path, port_default = 443):
+def extract_ips_from_file(file_path, port_default):
     """
     从 TXT 文件中提取 IP 地址和端口号（如果存在）
     """
@@ -129,6 +129,10 @@ def extract_ips_from_file(file_path, port_default = 443):
     ports = []
     with open(file_path, "r", encoding='utf-8') as file:
         for line in file:
+            # 如果这一行以 '//' 开始，跳过这一行（相当于注释掉）
+            if line.startswith('//'):
+                continue
+
             match = re.search(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b', line)
             if match:
                 ip_address = match.group()
@@ -146,7 +150,7 @@ def main():
     """
     input_file_path = "ip.txt"  # 输入文件路径
     output_file_path = "addressesapi.txt"  # 输出文件路径
-    port_default = 443  # 端口号
+    port_default = 443  # 默认端口号
 
     if not os.path.exists(input_file_path):
         print("输入文件不存在")
@@ -161,7 +165,6 @@ def main():
             if location is not None:
                 # file.write(f"{location['ip']}:{port}#{location['country']} {location['region']}\n")  # 国家+地区代号
                 file.write(f"{location['ip']}:{port}#{location['country']}\n")  # 仅国家 
-        print('location检测完成')
     print('location检测完成')
 
 
