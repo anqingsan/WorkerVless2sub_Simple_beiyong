@@ -35,5 +35,5 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add addressesapi.txt
           TIME=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')
-          git commit -m "Add output.txt at $TIME"
+          git commit -m "Update addressesapi.txt at $TIME"
           git push
