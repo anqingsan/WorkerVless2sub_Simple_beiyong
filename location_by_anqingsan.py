@@ -162,6 +162,11 @@ def main():
         for ip_address in ip_addresses:
             location = get_ip_location(ip_address)
             port = ports[ip_addresses.index(ip_address)]
+            
+            # 如果 location 是 None，跳过这一行
+            if location is None:
+                continue
+
             if location is not None:
                 # file.write(f"{location['ip']}:{port}#{location['country']} {location['region']}\n")  # 国家+地区代号
                 file.write(f"{location['ip']}:{port}#{location['country']}\n")  # 仅国家 
