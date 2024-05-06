@@ -121,3 +121,10 @@ IP地址,端口,TLS,数据中心,地区,城市,网络延迟,下载速度
 20.170.41.153#443,true,FRA,Europe,Frankfurt,285 ms,1468 kB/s
 104.40.244.228#443,true,AMS,Europe,Amsterdam,278 ms,1119 kB/s
 172.208.36.45#80,true,IAD,North America,Ashburn,291 ms,438 kB/s
+20240506天诚优选
+IP地址,端口,TLS,数据中心,地区,城市,网络延迟,下载速度
+152.67.250.155#443,true,SJC,North America,San Jose,190 ms,5637 kB/s
+143.47.247.15#443,true,FRA,Europe,Frankfurt,284 ms,5057 kB/s
+129.146.213.36#80,true,LAX,North America,Los Angeles,264 ms,3055 kB/s
+168.138.70.29#443,true,YYZ,North America,Toronto,277 ms,2802 kB/s
+146.56.132.247#443,true,NRT,Asia Pacific,Tokyo,114 ms,2396 kB/s
