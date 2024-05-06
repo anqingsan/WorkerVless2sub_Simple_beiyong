@@ -91,8 +91,8 @@ let EndPS = '';//节点名备注内容
 let FileName = 'WorkerVless2sub';
 let SUBUpdateTime = 6; 
 let total = 0.0099;//PB
-let timestamp = now;
-//let timestamp = 4102329600000;//2099-12-31
+//let timestamp = now;
+let timestamp = 4102329600000;//2099-12-31
 const regex = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|\[.*\]):?(\d+)?#?(.*)?$/;
 async function sendMessage(type, ip, add_data = "") {
 	if ( BotToken !== '' && ChatID !== ''){
